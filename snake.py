@@ -49,7 +49,7 @@ change_to = direction
 # inital score
 score = 0
   
-background = pygame.image.load('assets/snake.png')
+background = pygame.image.load('assets/menu/snake.png')
 
 # displaying Score function
 def show_score(choice, color, font, size):
