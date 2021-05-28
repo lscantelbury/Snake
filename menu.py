@@ -18,3 +18,15 @@ def credits():
 
 def quitgame():
     quitgame_button = pygame.image.load()
+
+def menu:
+    menu = True
+
+    while menu:
+        for event in pygame.event.get()
+        print(event)
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+        .pygame.image.load("/assets/luis.coimbra_menu")
+    pygame.draw.rect(gameDisplay)
