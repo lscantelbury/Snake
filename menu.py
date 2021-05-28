@@ -2,7 +2,7 @@ import pygame
 
 menu_x = 720
 menu_y = 480
-
+menu = pygame.display.set_mode((menu_x, menu_y))
 # defining colors
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
@@ -28,5 +28,6 @@ def menu:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
-        .pygame.image.load("/assets/luis.coimbra_menu")
+        menu = pygame.image.load("/assets/luis.coimbra_menu")
+        
     pygame.draw.rect(gameDisplay)
