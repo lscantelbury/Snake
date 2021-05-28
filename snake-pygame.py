@@ -20,7 +20,7 @@ window = pygame.display.set_mode((
                                 window_height
                                 ))
 pygame.display.set_caption("Snake")
-fps = pygame.time.Clock(60)
+fps = pygame.time.Clock()
 
 snake_starting_point = [111, 62]
 snake_body = [[111,62], # Each tuple is a segment
@@ -37,3 +37,11 @@ spawn = True
 
 # Assigning variables for snake's orientation
 
+direction = 'RIGHT'
+change_to = direction
+
+#Score and Number of lives at the bottom of screen
+score = 0
+font = pygame.font.Font(None, 34)
+text = font.render("Score: " + str(score), 1, white)
+window.blit(text, (20,10))
