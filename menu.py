@@ -2,8 +2,8 @@ import pygame
 
 menu_x = 720
 menu_y = 480
-menubg = pygame.display.set_mode((menu_x, menu_y))
-image = pygame.image.load('assets/luis.coimbra_menu.png')
+window = pygame.display.set_mode((menu_x, menu_y))
+menubg = pygame.image.load('assets/luis.coimbra_menu.png')
 # defining colors
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
@@ -26,13 +26,14 @@ def menu():
     while menu:
         for event in pygame.event.get():
             print(event)
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
-        menubg = pygame.image.load("/assets/luis.coimbra_menuquit")
-        menubg.blit(image, (0 ,0))
-    pygame.draw.rect(menubg, )
-    pygame.draw.rect(menubg, )
-    pygame.draw.rect(menubg, )
-    pygame.draw.rect(menubg, )
-pygame.display.update()
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        window.blit(image, (0 ,0))
+
+        pygame.draw.rect(window, )
+        pygame.draw.rect(window, )
+        pygame.draw.rect(window, )
+        pygame.draw.rect(window, )
+        pygame.display.update()
