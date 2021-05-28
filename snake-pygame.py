@@ -42,6 +42,12 @@ change_to = direction
 
 #Score and Number of lives at the bottom of screen
 score = 0
-font = pygame.font.Font(None, 34)
-text = font.render("Score: " + str(score), 1, white)
-window.blit(text, (20,10))
+
+
+def score_displaying():
+    font = pygame.font.Font(None, 34)
+    text = font.render("Score: " + str(score), 1, white)
+    window.blit(text, (20,10))
+
+
+pygame.quit()
