@@ -13,7 +13,7 @@ window_y = 480
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
-green = pygame.Color(0, 255, 0)
+green = pygame.Color(16, 56, 6) #phtaloh green
 blue = pygame.Color(0, 0, 255)
   
 # Initialising pygame
