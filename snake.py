@@ -2,7 +2,7 @@
 import pygame
 import time
 import random
-  
+
 snake_speed = 15
   
 # Window size
@@ -49,6 +49,8 @@ change_to = direction
 # inital score
 score = 0
   
+background = pygame.image.load('assets/grama.png')
+
 # displaying Score function
 def show_score(choice, color, font, size):
     
@@ -100,7 +102,7 @@ def game_over():
   
 # Main Function
 while True:
-      
+    game_window.blit(background, (0, 0))
     # handling key events
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
@@ -150,7 +152,6 @@ while True:
                           random.randrange(1, (window_y//10)) * 10]
           
     fruit_spawn = True
-    game_window.fill(black)
       
     for pos in snake_body:
         pygame.draw.rect(game_window, green,
