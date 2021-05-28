@@ -35,7 +35,7 @@ snake_body = [[100, 50],
               [80, 50],
               [70, 50]
               ]
-# fruit posiiton
+# fruit position
 fruit_position = [random.randrange(1, (window_x//10)) * 10, 
                   random.randrange(1, (window_y//10)) * 10]
   
