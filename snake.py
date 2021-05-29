@@ -3,7 +3,7 @@ import pygame
 import time
 import random
 
-snake_speed = 15
+snake_speed = 8
   
 # Window size
 window_x = 720
@@ -36,8 +36,8 @@ snake_body = [[100, 50],
               [70, 50]
               ]
 # fruit position
-fruit_position = [random.randrange(1, (window_x//10)) * 10, 
-                  random.randrange(1, (window_y//10)) * 10]
+fruit_position = [random.randrange(1, (window_x//20)) * 10, 
+                  random.randrange(1, (window_y//20)) * 10]
   
 fruit_spawn = True
   
@@ -72,7 +72,7 @@ def show_score(choice, color, font, size):
 def game_over():
     
     # creating font object my_font
-    my_font = pygame.font.SysFont('times new roman', 50)
+    my_font = pygame.font.SysFont('Comic Sans MS', 50)
       
     # creating a text surface on which text 
     # will be drawn
@@ -129,13 +129,13 @@ while True:
   
     # Moving the snake
     if direction == 'UP':
-        snake_position[1] -= 10
+        snake_position[1] -= 36
     if direction == 'DOWN':
-        snake_position[1] += 10
+        snake_position[1] += 36
     if direction == 'LEFT':
-        snake_position[0] -= 10
+        snake_position[0] -= 36
     if direction == 'RIGHT':
-        snake_position[0] += 10
+        snake_position[0] += 36
   
     # Snake body growing mechanism
     # if fruits and snakes collide then scores
@@ -146,18 +146,36 @@ while True:
         fruit_spawn = False
     else:
         snake_body.pop()
-          
+
     if not fruit_spawn:
-        fruit_position = [random.randrange(1, (window_x//10)) * 10, 
-                          random.randrange(1, (window_y//10)) * 10]
+        fruit_position = [random.randrange(1, (window_x//20)) * 10, 
+                          random.randrange(1, (window_y//20)) * 10]
           
     fruit_spawn = True
-      
+
+    i = 0 
+
     for pos in snake_body:
-        pygame.draw.rect(game_window, green,
-                         pygame.Rect(pos[0], pos[1], 10, 10))
-    pygame.draw.rect(game_window, white, pygame.Rect(
-        fruit_position[0], fruit_position[1], 10, 10))
+
+        if i != 0:
+            game_window.blit(pygame.image.load("assets/snake/snakebody.png"), [pos[0], pos[1]])
+        else:
+            if direction == 'UP':
+                game_window.blit(pygame.image.load("assets/snake/snakespriteup.png"), [pos[0], pos[1]])
+            if direction == 'DOWN':
+                game_window.blit(pygame.image.load("assets/snake/snakespritedown.png"), [pos[0], pos[1]])
+            if direction == 'LEFT':
+                game_window.blit(pygame.image.load("assets/snake/snakespriteleft.png"), [pos[0], pos[1]])
+            if direction == 'RIGHT':
+                game_window.blit(pygame.image.load("assets/snake/snakespriteright.png"), [pos[0], pos[1]])
+        
+        i += 1
+
+        '''pygame.draw.rect(game_window, green,
+                         pygame.Rect(pos[0], pos[1], 10, 10))'''
+    '''pygame.draw.rect(game_window, white, pygame.Rect(
+        fruit_position[0], fruit_position[1], 10, 10))'''
+    game_window.blit(pygame.image.load("assets/cherry/cherry0.png"), [fruit_position[0], fruit_position[1]])
   
     # Game Over conditions
     if snake_position[0] < 0 or snake_position[0] > window_x-10:
