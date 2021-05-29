@@ -13,7 +13,7 @@ window_y = 480
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
-green = pygame.Color(16, 56, 6) #phtaloh green
+green = pygame.Color(16, 56, 6)  # phtaloh green
 blue = pygame.Color(0, 0, 255)
   
 # Initializing pygame
@@ -46,10 +46,11 @@ fruit_spawn = True
 direction = 'RIGHT'
 change_to = direction
   
-# inital score
+# initial score
 score = 0
-  
+
 background = pygame.image.load('assets/menu/snake.png')
+
 
 # displaying Score function
 def show_score(choice, color, font, size):
@@ -67,7 +68,8 @@ def show_score(choice, color, font, size):
       
     # displaying text
     game_window.blit(score_surface, score_rect)
-  
+
+
 # game over function
 def game_over():
     
@@ -188,11 +190,11 @@ while True:
         if snake_position[0] == block[0] and snake_position[1] == block[1]:
             game_over()
   
-    # displaying score countinuously
+    # displaying score continuously
     show_score(1, white, 'times new roman', 20)
   
     # Refresh game screen
     pygame.display.update()
   
-    # Frame Per Second /Refres Rate
+    # Frame Per Second / Refresh Rate
     fps.tick(snake_speed)
