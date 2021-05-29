@@ -55,11 +55,11 @@ background = pygame.image.load('assets/menu/snake.png')
 def show_score(choice, color, font, size):
     
     # creating font object score_font
-    score_font = pygame.font.SysFont(font, size)
+    score_font = pygame.font.Font('assets/PressStart2P.ttf', 20)
       
     # create the display surface object 
     # score_surface
-    score_surface = score_font.render('Score : ' + str(score), True, color)
+    score_surface = score_font.render('Score : ' + str(score), True, white)
       
     # create a rectangular object for the text
     # surface object
@@ -72,12 +72,12 @@ def show_score(choice, color, font, size):
 def game_over():
     
     # creating font object my_font
-    my_font = pygame.font.SysFont('Comic Sans MS', 50)
+    my_font = pygame.font.Font('assets/PressStart2P.ttf', 30)
       
     # creating a text surface on which text 
     # will be drawn
     game_over_surface = my_font.render(
-        'Your Score is : ' + str(score), True, red)
+        '''Your Score is : ''' + str(score), True, red)
       
     # create a rectangular object for the text 
     # surface object
