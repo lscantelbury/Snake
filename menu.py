@@ -20,7 +20,8 @@ def credits():
 def quitgame():
     quitgame_button = pygame.image.load()
 
-def menu():
+def Start_Menu():
+
     menu = True
 
     while menu:
