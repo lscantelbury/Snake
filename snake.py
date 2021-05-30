@@ -138,19 +138,19 @@ while run_game:
 
     # Moving the snake
     if direction == 'UP':
-        snake_position[1] -= 36
+        snake_position[1] -= 30
     if direction == 'DOWN':
-        snake_position[1] += 36
+        snake_position[1] += 30
     if direction == 'LEFT':
-        snake_position[0] -= 36
+        snake_position[0] -= 30
     if direction == 'RIGHT':
-        snake_position[0] += 36
+        snake_position[0] += 30
 
     # Snake body growing mechanism
     # if fruits and snakes collide then scores
     # will be incremented by 10
     snake_body.insert(0, list(snake_position))
-    if snake_position[0] == fruit_position[0] and snake_position[1] == fruit_position[1]:
+    if fruit_position[0] -10 <= snake_position[0] <= fruit_position[0]+10 and fruit_position[1]-10 <= snake_position[1] <= fruit_position[1] +10:
         score += 10
         fruit_spawn = False
     else:
@@ -159,7 +159,7 @@ while run_game:
     if not fruit_spawn:
         fruit_position = [random.randrange(1, (window_x // 20)) * 10,
                           random.randrange(1, (window_y // 20)) * 10]
-
+    print(f"cobra x {snake_position[0]} y {snake_position[1]}\nfruta x {fruit_position[0]} y {fruit_position[1]}" )
     fruit_spawn = True
 
     i = 0
