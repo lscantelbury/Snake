@@ -2,7 +2,9 @@
 import pygame
 import time
 import random
+import menu
 from pygame.locals import *
+
 
 snake_speed = 8
 
@@ -99,17 +101,16 @@ def game_over():
 
     # quit the program
     quit()
-
-
-running = True
-
+run_game = True
+'''while menu.start_menu():
+    menu.start_menu()'''
 # Main Function
-while running:
+while run_game:
     game_window.blit(background, (0, 0))
     # handling key events
     for event in pygame.event.get():
         if event.type == QUIT:
-            running = False
+            run_game = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 change_to = 'UP'
