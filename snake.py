@@ -22,8 +22,14 @@ blue = pygame.Color(0, 0, 255)
 # Initializing pygame
 pygame.init()
 
+run_game = True
+
+# Main Function
+while menu.start_menu():
+    menu.start_menu()
+    
 # Initialize game window
-pygame.display.set_caption('GeeksforGeeks Snakes')
+pygame.display.set_caption('Snake')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # FPS (frames per second) controller
@@ -101,10 +107,7 @@ def game_over():
 
     # quit the program
     quit()
-run_game = True
-# Main Function
-while menu.start_menu():
-    menu.start_menu()
+
 while run_game:
     game_window.blit(background, (0, 0))
     # handling key events

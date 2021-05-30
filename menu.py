@@ -12,25 +12,13 @@ red = pygame.Color(255, 0, 0)
 green = pygame.Color(16, 56, 6)  # phtaloh green
 blue = pygame.Color(0, 0, 255)
 
-
-'''def start_game():
-    start_button = pygame.image.load()
-
-
-def credits():
-    credits_button = pygame.image.load()
-
-
-def quit_game():
-    quit_game_button = pygame.image.load()'''
-
-
 def start_menu():
     menu = True
 
     while menu:
 
         window.blit(menu_bg, (0, 0))
+        pygame.display.set_caption(('Snake'))
         pygame.display.update()
         clock.tick(60)
         
