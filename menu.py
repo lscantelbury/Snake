@@ -5,6 +5,7 @@ menu_y = 480
 window = pygame.display.set_mode((menu_x, menu_y))
 menu_bg = pygame.image.load('assets/menu/luis.coimbra_menu.png')
 clock = pygame.time.Clock()
+
 # defining colors
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
@@ -36,5 +37,21 @@ def start_menu():
                     run_game = True
                     menu = False
                     return menu
+            if  290 + 130 >= mouse[0] >= 290 and 255 + 50 >= mouse[1] >= 255:
+                menubg = pygame.image.load('assets/menu/luis.coimbra_menuoptions.png')
+                window.blit(menubg, (0, 0))
+                pygame.display.update()
+
+            if  290 + 130 >= mouse[0] >= 290 and 325 + 50 >= mouse[1] >= 325:
+                menubg = pygame.image.load('assets/menu/luis.coimbra_menucredits.png')
+                window.blit(menubg, (0, 0))
+                pygame.display.update()
+            
+            if  290 + 130 >= mouse[0] >= 290 and 395 + 50 >= mouse[1] >= 395:
+                menubg = pygame.image.load('assets/menu/luis.coimbra_menuquit.png')
+                window.blit(menubg, (0, 0))
+                pygame.display.update()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    quit()
 start_menu()        
 
