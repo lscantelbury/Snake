@@ -47,6 +47,6 @@ def start_menu():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     run_game = True
                     menu = False
-
+                    return menu
 start_menu()        
 

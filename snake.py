@@ -102,9 +102,9 @@ def game_over():
     # quit the program
     quit()
 run_game = True
-'''while menu.start_menu():
-    menu.start_menu()'''
 # Main Function
+while menu.start_menu():
+    menu.start_menu()
 while run_game:
     game_window.blit(background, (0, 0))
     # handling key events
