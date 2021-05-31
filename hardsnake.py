@@ -2,12 +2,12 @@
 import pygame
 import time
 import random
-import menu
+import hardmenu
 from pygame.locals import *
 
 
 def main():
-    snake_speed = 8
+    snake_speed = 20
 
     # Window size
     window_x = 720
@@ -26,8 +26,8 @@ def main():
     run_game = True
 
     # Main Function
-    while menu.start_menu():
-        menu.start_menu()
+    while hardmenu.hard_menu():
+        hardmenu.hard_menu()
 
     # Initialize game window
     pygame.display.set_caption('Snake')
@@ -59,7 +59,7 @@ def main():
     # initial score
     score = 0
 
-    background = pygame.image.load('assets/menu/snake.png')
+    background = pygame.image.load('assets/menu/luis.coimbra_radsnakefire.png')
 
 
     # displaying Score function
@@ -87,7 +87,7 @@ def main():
         # creating a text surface on which text 
         # will be drawn
         game_over_surface = my_font.render(
-            '''Score: ''' + str(score), True, red)
+            '''Looser's Score: ''' + str(score), True, red)
 
         # create a rectangular object for the text 
         # surface object
