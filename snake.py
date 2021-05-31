@@ -109,7 +109,8 @@ def game_over():
 
 cherry = "assets/cherry/cherry0.png"
 pineapple = "assets/pineapple/pineapplesprite.png"
-fruitlist = [cherry, pineapple]
+orange = "assets/orange/orangesprite.png"
+fruitlist = [cherry, pineapple, orange]
 
 fruit = random.choice(fruitlist)
 
