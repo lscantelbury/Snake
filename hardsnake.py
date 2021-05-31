@@ -113,6 +113,10 @@ def main():
 
     fruit = random.choice(fruitlist)
 
+    pygame.mixer.init()
+    pygame.mixer.music.load('assets/numb.wav')
+    pygame.mixer.music.play(loops=-1)
+
     while run_game:
 
         game_window.blit(background, (0, 0))
