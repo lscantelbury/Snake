@@ -107,8 +107,14 @@ def game_over():
     # quit the program
     quit()
 
+cherry = "assets/cherry/cherry0.png"
+pineapple = "assets/pineapple/pineapplesprite.png"
+fruitlist = [cherry, pineapple]
+
+fruit = random.choice(fruitlist)
 
 while run_game:
+
     game_window.blit(background, (0, 0))
     # handling key events
     for event in pygame.event.get():
@@ -154,6 +160,7 @@ while run_game:
             and fruit_position[1] - 10 <= snake_position[1] <= fruit_position[1] + 10:
         score += 10
         fruit_spawn = False
+        fruit = random.choice(fruitlist)
     else:
         snake_body.pop()
 
@@ -181,11 +188,7 @@ while run_game:
 
         i += 1
 
-        '''pygame.draw.rect(game_window, green,
-                         pygame.Rect(pos[0], pos[1], 10, 10))'''
-    '''pygame.draw.rect(game_window, white, pygame.Rect(
-        fruit_position[0], fruit_position[1], 10, 10))'''
-    game_window.blit(pygame.image.load("assets/cherry/cherry0.png"), [fruit_position[0], fruit_position[1]])
+    game_window.blit(pygame.image.load(fruit), [fruit_position[0], fruit_position[1]])
 
     # Game Over conditions
     if snake_position[0] < 0 or snake_position[0] > window_x - 10:
