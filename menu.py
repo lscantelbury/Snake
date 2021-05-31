@@ -1,37 +1,31 @@
 import pygame
+import time
 
 pygame.init()
 
-menu_x = 720
-menu_y = 480
-window = pygame.display.set_mode((menu_x, menu_y))
-menu_bg = pygame.image.load('assets/menu/luis.coimbra_menu.png')
-clock = pygame.time.Clock()
-font = pygame.font.Font('assets/PressStart2P.ttf', 10)
-
-
-
-def credits():
-    menu_bg = pygame.image.load('assets/menu/snake.png')
-    window.blit(menu_bg, (0, 0))
-    pygame.display.set_caption(('Credits'))
-    text = font.render('''Group 6
-    Luís Henrique Coimbra Evangelista
-    Luã Maury Maquiné da Silva
-    Luiz Carlos Glomyer Pereira Gomes Junior
-    Levi Alfaia Loureiro
-    Luís Henrique Scantelbury de Almeida''', True, black)
-    render = text.get_rect()
-    render.midtop = (menu_x / 2, menu_y / 4)
-    window.blit(text, render)
-    pygame.display.update()
 
 def start_menu():
     menu = True
+    menu_x = 720
+    menu_y = 480
+    window = pygame.display.set_mode((menu_x, menu_y))
+    menubg = pygame.image.load('assets/menu/luis.coimbra_menu.png')
+    clock = pygame.time.Clock()
+    font = pygame.font.Font('assets/PressStart2P.ttf', 10)
+
+
+    def credits():
+        creditswindow = pygame.display.set_mode((720, 480))
+        background = pygame.image.load('assets/menu/credits.png')
+        creditswindow.blit(background, (0, 0))
+        pygame.display.update()
+        time.sleep(10)
+        start_menu()
+        
 
     while menu:
 
-        window.blit(menu_bg, (0, 0))
+        window.blit(menubg, (0, 0))
         pygame.display.set_caption('Snake')
         pygame.display.update()
         clock.tick(60)
@@ -62,7 +56,9 @@ def start_menu():
                 menubg = pygame.image.load('assets/menu/luis.coimbra_menucredits.png')
                 window.blit(menubg, (0, 0))
                 pygame.display.update()
-
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    credits()
+                
             # Quit button
             if 290 + 130 >= mouse[0] >= 290 and 395 + 50 >= mouse[1] >= 395:
                 menubg = pygame.image.load('assets/menu/luis.coimbra_menuquit.png')
