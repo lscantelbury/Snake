@@ -168,7 +168,6 @@ while run_game:
     if not fruit_spawn:
         fruit_position = [random.randrange(1, (window_x // 20)) * 10,
                           random.randrange(1, (window_y // 20)) * 10]
-    print(f"cobra x {snake_position[0]} y {snake_position[1]}\nfruta x {fruit_position[0]} y {fruit_position[1]}")
     fruit_spawn = True
 
     i = 0
