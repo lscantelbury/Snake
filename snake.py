@@ -5,7 +5,6 @@ import random
 import menu
 from pygame.locals import *
 
-
 snake_speed = 8
 
 # Window size
@@ -27,7 +26,7 @@ run_game = True
 # Main Function
 while menu.start_menu():
     menu.start_menu()
-    
+
 # Initialize game window
 pygame.display.set_caption('Snake')
 game_window = pygame.display.set_mode((window_x, window_y))
@@ -108,6 +107,7 @@ def game_over():
     # quit the program
     quit()
 
+
 while run_game:
     game_window.blit(background, (0, 0))
     # handling key events
@@ -150,7 +150,8 @@ while run_game:
     # if fruits and snakes collide then scores
     # will be incremented by 10
     snake_body.insert(0, list(snake_position))
-    if fruit_position[0] -10 <= snake_position[0] <= fruit_position[0]+10 and fruit_position[1]-10 <= snake_position[1] <= fruit_position[1] +10:
+    if fruit_position[0] - 10 <= snake_position[0] <= fruit_position[0] + 10 \
+            and fruit_position[1] - 10 <= snake_position[1] <= fruit_position[1] + 10:
         score += 10
         fruit_spawn = False
     else:
@@ -159,7 +160,7 @@ while run_game:
     if not fruit_spawn:
         fruit_position = [random.randrange(1, (window_x // 20)) * 10,
                           random.randrange(1, (window_y // 20)) * 10]
-    print(f"cobra x {snake_position[0]} y {snake_position[1]}\nfruta x {fruit_position[0]} y {fruit_position[1]}" )
+    print(f"cobra x {snake_position[0]} y {snake_position[1]}\nfruta x {fruit_position[0]} y {fruit_position[1]}")
     fruit_spawn = True
 
     i = 0
